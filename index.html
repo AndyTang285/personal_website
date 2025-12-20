@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Home" content="Home page">
+    <meta name="author" content="Andy Tang">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header id="navbar">
+        <div><h1 class="logo">ANDY.TXT</h1></div>
+        <nav>
+            <button data-target="about">About Me</button>
+            <button data-target="projects">Projects</button>
+            <button data-target="contacts">Contacts</button>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="typewriter">
+            <span id="type-text"></span><span class="cursor">█</span>
+        </div>
+    </section>
+
+    <main>
+        <div class="topbar">
+            <div class="dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+            </div>
+            <div class="title">RETRO-PORTFOLIO - ANDY TANG</div>
+        </div>
+
+        <div class="retro-banner">
+            <img src="halo_banner.jpg">
+        </div>
+
+        <div class="profile-row">
+            <div class="pfp-box">
+                <img class="pfp-icon" src="Mirajane_Alegria_SS.webp" alt="mira!!!!">
+            </div>
+
+            <div class="profile-info">
+                <h1>Andy Tang</h1>
+                <p class="tags"> CS & CogSci @ UMich</p>
+                <p class="status"></p>
+            </div>
+        </div>
+
+        <section class="card about active">
+            <p class="title about">> ABOUT</p>
+            <p class="description">
+                Hi I'm Andy, a CS and Cognitive Science student at the University of Michigan Ann Arbor. 
+            </p>
+            <p class="description">
+                Give me an internship pleaseeee. I want a Riot gun buddy. Stop nerfing Viper. 
+                I can't take this anymore. China Japan please go to war AFTER the new Black Clover comes out.
+                One Piece is soooooooo assssssss. DB better. #100thieveswin #pistonswin WHY IS GTA 6 DELAYED EVEN MORE?! GODDAMN!
+            </p>
+        </section>
+
+        <section class="card projects">
+            <p class="title projects">> PROJECTS</p>
+            <p class="projectsTypeText"></p>
+            <div class="project-deck">
+                
+                <div class="folder-card" onclick="openModal('modal-tiny-tours')">
+                    <div class="folder-tab">#001</div>
+                    <div class="folder-body">
+                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                    </div>
+                    <div class="folder-paper">---------------</div>
+                    <div class="folder-footer">
+                        <h3>Tiny Tours (In Progress)</h3>
+                        <p class="project-text">
+                            Tiny Tours is a Unity-based VR simulation that visualizes nuclear and particle-level processes.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="folder-card" onclick="openModal('modal-backline')">
+                    <div class="folder-tab">#002</div>
+                    <div class="folder-body">
+                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                    </div>
+                    <div class="folder-paper">---------------</div>
+                    <div class="folder-footer">
+                        <h3>Backline</h3>
+                        <p class="project-text">
+                            Backline is a third-person horror game built in Unity featuring custom level design.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="folder-card" onclick="openModal('modal-hand-tracking')">
+                    <div class="folder-tab">#003</div>
+                    <div class="folder-body">
+                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                    </div>
+                    <div class="folder-paper">---------------</div>
+                    <div class="folder-footer">
+                        <h3>Hand-Tracking Driving</h3>
+                        <p class="project-text">
+                            Developed a touchless vehicle control system using C# and Unity.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="folder-card" onclick="openModal('modal-trappist')">
+                    <div class="folder-tab">#004</div>
+                    <div class="folder-body">
+                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                    </div>
+                    <div class="folder-paper">---------------</div>
+                    <div class="folder-footer">
+                        <h3>TRAPPIST-1 VR</h3>
+                        <p class="project-text">
+                            A VR exploration of the TRAPPIST-1 system allowing users to observe real-time orbits.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="folder-card" onclick="openModal('modal-vector-pit')">
+                    <div class="folder-tab">#005</div>
+                    <div class="folder-body">
+                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                    </div>
+                    <div class="folder-paper">---------------</div>
+                    <div class="folder-footer">
+                        <h3>Vector Pit VR</h3>
+                        <p class="project-text">
+                            Vector Pit is an intense, retro-arcade VR shooter where you survive endless waves.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="card contacts">
+            <p class="title contacts">> CONTACT ME</p>
+            <form id="contactForm">
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+                <button type="submit" id="submit">Send</button>
+                <p id="formStatus"></p>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>Footer</footer>
+
+
+    <div id="modal-tiny-tours" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-bar">
+                <span>TINY_TOURS.EXE</span>
+                <button class="close-btn" onclick="closeModal('modal-tiny-tours')">X</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-left-col">
+                    <div class="modal-img-box">
+                        <p>IMAGE HERE</p>
+                        </div>
+                    <p class="status-tag">STATUS: <span style="color:#63cdb0">IN PROGRESS</span></p>
+                </div>
+                <div class="modal-text">
+                    <h2>Tiny Tours VR</h2>
+                    <p>
+                        Tiny Tours is a Unity-based VR simulation that visualizes nuclear and particle-level processes, helping users explore interactions relevant to radiation and nuclear systems.
+                        <br><br>
+                        Users can shrink down to the atomic level to observe electron interactions, alpha decay, and gamma radiation in real-time.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-backline" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-bar">
+                <span>BACKLINE_GAME.EXE</span>
+                <button class="close-btn" onclick="closeModal('modal-backline')">X</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-left-col">
+                    <div class="modal-img-box"><p>IMAGE HERE</p></div>
+                    <p class="status-tag">STATUS: <span style="color:#77ccff">FINISHED</span></p>
+                </div>
+                <div class="modal-text">
+                    <h2>Backline</h2>
+                    <p>
+                        Backline is a third-person horror game built in Unity featuring custom level design, scripted interactions, dynamic audio cues, and atmosphere-focused lighting.
+                        <br><br>
+                        It focuses on psychological tension rather than cheap jump scares.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-hand-tracking" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-bar">
+                <span>HAND_TRACK.PY</span>
+                <button class="close-btn" onclick="closeModal('modal-hand-tracking')">X</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-left-col">
+                    <div class="modal-img-box"><p>IMAGE HERE</p></div>
+                    <p class="status-tag">STATUS: <span style="color:#77ccff">FINISHED</span></p>
+                </div>
+                <div class="modal-text">
+                    <h2>Hand-Tracking Driving</h2>
+                    <p>
+                        Developed a touchless vehicle control system using C# and Unity. Integrated Google MediaPipe for real-time computer vision, allowing users to steer, accelerate, and brake using only hand gestures.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-trappist" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-bar">
+                <span>TRAPPIST_SIM.EXE</span>
+                <button class="close-btn" onclick="closeModal('modal-trappist')">X</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-left-col">
+                    <div class="modal-img-box"><p>IMAGE HERE</p></div>
+                    <p class="status-tag">STATUS: <span style="color:#77ccff">FINISHED</span></p>
+                </div>
+                <div class="modal-text">
+                    <h2>TRAPPIST-1 VR</h2>
+                  
+                    <p><strong>&gt; OVERVIEW</strong></p>
+                    <p>
+                      An interactive VR simulation of the TRAPPIST-1 exoplanetary system, designed to visualize tightly packed planetary orbits, compare relative planet sizes, and explore potential habitability.
+                    </p>
+                  
+                    <p><strong>&gt; FEATURES</strong></p>
+                    <ul>
+                      <li>Explore all seven TRAPPIST-1 planets in VR with adjustable simulation speed.</li>
+                      <li>View scientifically accurate relative planet sizes and orbital periods.</li>
+                      <li>Side-by-side size comparison between Earth and each TRAPPIST-1 planet.</li>
+                      <li>Per-planet information panels detailing planet type, orbital period, and habitability notes.</li>
+                      <li>Free navigation using VR locomotion and interaction controls.</li>
+                    </ul>
+                  
+                    <p><strong>&gt; TECHNICAL NOTES</strong></p>
+                    <ul>
+                      <li>Built in Unity using C#.</li>
+                      <li>Implemented custom orbital motion using trigonometric functions (<code>Mathf.Sin</code>, <code>Mathf.Cos</code>) for smooth real-time planet movement.</li>
+                      <li>Uses a global time multiplier to support fast-forward and slow-motion simulation.</li>
+                      <li>VR interactions and locomotion managed via Unity XR Interaction Toolkit and XR Interaction Manager.</li>
+                      <li>Planetary data sourced and cross-referenced from NASA’s Eyes on Exoplanets TRAPPIST-1 simulation.</li>
+                    </ul>
+                  </div>
+                  
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-vector-pit" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-bar">
+                <span>VECTOR_PIT.EXE</span>
+                <button class="close-btn" onclick="closeModal('modal-vector-pit')">X</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-left-col">
+                    <div class="modal-img-box"><p>IMAGE HERE</p></div>
+                    <p class="status-tag">STATUS: <span style="color:#77ccff">FINISHED</span></p>
+                </div>
+                <div class="modal-text">
+                    <h2>Vector Pit VR</h2>
+                    <p>
+                        Vector Pit is an intense, retro-arcade VR shooter where you survive endless waves of geometric enemies in a neon-lit cyber arena. It features smooth locomotion and a wrist-mounted radar system.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
