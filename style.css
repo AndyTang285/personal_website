@@ -16,10 +16,13 @@ body, html{
     width: 100%;
     z-index: 1030;
 
+    padding: 15px 40px;      /* Adds space: Top/Bottom Left/Right */
+    box-sizing: border-box;  /* Prevents the padding from making the page wider than 100% */
+
+
     opacity: 0;
     transform: translateY(-20px);
     
-
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -31,13 +34,28 @@ body, html{
         height 0.25s ease,
         gap 0.25s ease,
         justify-content 0.25s ease;
+}
 
+.logo-container {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    background: rgba(119, 204, 255, 0.12); /* optional */
 }
 
 .logo {
-    color: #77ccff;
-    padding-left: 25px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;   /* 🔑 keeps entire logo visible */
 }
+
+
 
 nav {
     padding-right: 20px;
@@ -230,7 +248,20 @@ main {
 }
 
 .tags {
-    margin: 5px 0;
+    margin: 2px 0;
+}
+
+.links {
+    margin: 4px 0;
+    padding: 0;
+}
+
+.links a {
+    color: #77ccff;
+    text-decoration: none;
+    font-family: 'Pixelify Sans', Arial, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    
 }
 
 .blue {
@@ -389,6 +420,7 @@ main {
 
 .folder-body:hover {
     background-color:#77ccff;
+    cursor: pointer;
 }
 
 .folder-paper{
@@ -421,6 +453,14 @@ main {
     align-items: center;
     justify-content: center;
     font-family: 'Pixelify Sans', Arial, Helvetica, sans-serif;
+}
+.folder-img {
+    width: 100%;           /* Fill the width of the folder */
+    height: 150px;         /* Force a consistent height */
+    object-fit: cover;     /* Crops the image so it doesn't look squished */
+    border: 2px solid #000; /* Adds that retro black border */
+    display: block;        /* Fixes tiny spacing gaps */
+    background-color: #000;
 }
 
 .folder-footer {
@@ -540,28 +580,38 @@ main {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    
+    /* NEW: Allow this column to scroll independently */
+    overflow-y: auto; 
+    padding-right: 5px; /* Room for scrollbar */
+}
+
+/* Custom Scrollbar for Left Column (Matches your text column) */
+.modal-left-col::-webkit-scrollbar {
+    width: 8px;
+}
+.modal-left-col::-webkit-scrollbar-track {
+    background: #0f1024;
+    border-left: 2px solid #000;
+}
+.modal-left-col::-webkit-scrollbar-thumb {
+    background-color: #F85525;
+    border: 2px solid #000;
 }
 
 .modal-img-box {
     width: 100%;
-    height: 200px;
+    height: 200px; /* The height you want */
+    
+    /* NEW: Force the box to NEVER shrink below 200px */
+    flex-shrink: 0; 
+    
     background: #000;
     border: 2px solid #77ccff;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-}
-
-.modal-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.status-tag {
-    font-size: 0.9rem;
-    margin: 0;
 }
 
 /* Right Column (Text) */
@@ -643,4 +693,216 @@ main {
 /* (Optional) Remove top margin from the very first header so it aligns with the image */
 .modal-text p:first-of-type strong {
     margin-top: 0;
+}
+
+/* LIGHTBOX STYLES */
+/* --- CORRECTED LIGHTBOX STYLES --- */
+
+.lightbox {
+    display: none; 
+    position: fixed; 
+    z-index: 20000; /* FIX: Increased to be higher than Modal (9999) */
+    padding-top: 50px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.9); 
+    backdrop-filter: blur(5px);
+}
+
+/* Lightbox Image */
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px; 
+    max-height: 80vh;  
+    object-fit: contain;
+    border: 2px solid #fff; 
+    box-shadow: 0 0 20px rgba(119, 204, 255, 0.5); /* Added Blue Glow */
+    animation-name: zoom;
+    animation-duration: 0.3s;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #F85525; /* Changed to Orange to match theme */
+    font-size: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    font-family: 'Pixelify Sans', sans-serif;
+    z-index: 20001;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* --- FIX FOR IMAGES INSIDE MODALS --- */
+/* This ensures images fill the box exactly like the old look */
+.modal-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crops image to fit the box perfectly */
+    cursor: zoom-in;
+    transition: transform 0.2s, filter 0.2s;
+}
+
+.modal-img-box img:hover {
+    transform: scale(1.1); /* Slight zoom effect */
+    filter: brightness(1.2);
+}
+
+footer {
+    background-color: #050510;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* --- MOBILE RESPONSIVENESS OVERRIDES --- */
+
+@media (max-width: 950px) {
+    /* 1. Unfix the Main Container Width */
+    main {
+        width: 90%;          /* Use percentage instead of 900px */
+        margin-top: 100px;   /* Reduce top margin */
+        margin-bottom: 50px;
+        box-sizing: border-box; /* Ensures padding doesn't overflow width */
+    }
+
+    /* 2. Adjust Hero Text */
+    .typewriter {
+        font-size: 28px; /* Smaller text for mobile screens */
+        text-align: center;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- HEADER / NAVBAR --- */
+    #navbar {
+        padding: 10px 15px; /* Smaller padding */
+        gap: 10px;
+    }
+
+    .logo-container {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav {
+        gap: 8px; /* Bring buttons closer */
+        padding-right: 0;
+    }
+
+    nav button {
+        padding: 8px 10px;
+        font-size: 12px; /* Smaller text on buttons */
+    }
+
+    /* --- PROFILE SECTION --- */
+    .profile-row {
+        flex-direction: column; /* Stack image on top of text */
+        align-items: center;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .pfp-box {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-info h1 {
+        font-size: 28px;
+    }
+
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        font-size: 14px;
+    }
+
+    /* --- PROJECTS DECK --- */
+    .project-deck {
+        grid-template-columns: 1fr; /* Force single column */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .folder-card {
+        width: 100%;       /* Fill container */
+        max-width: 360px;  /* But don't get massive */
+    }
+    
+    .folder-body {
+        width: 100%; /* Ensure body fits the card container */
+    }
+    
+    .folder-paper {
+        display: none; /* Hide the paper animation on mobile to save space/glitches */
+    }
+
+    /* --- CONTACT FORM --- */
+    #contactForm {
+        width: 100%; /* Full width form */
+    }
+}
+
+/* --- MODAL MOBILE FIXES --- */
+@media (max-width: 850px) {
+    .modal-window {
+        width: 95%;        /* Fill screen width */
+        height: 85vh;      /* Use viewport height */
+        max-height: 85vh;
+        margin-top: 20px;  /* Visual breathing room */
+    }
+
+    .modal-content {
+        flex-direction: column; /* Stack Image on top of Text */
+        overflow-y: scroll;     /* Allow the whole content area to scroll */
+        padding: 15px;
+    }
+
+    /* Reset the independent scrolling columns for mobile */
+    .modal-left-col, .modal-text {
+        flex: none;
+        overflow-y: visible; 
+        padding-right: 0;
+    }
+
+    .modal-left-col {
+        margin-bottom: 20px;
+        border-bottom: 2px dashed #444;
+        padding-bottom: 20px;
+    }
+
+    .modal-img-box {
+        height: 180px; /* Slightly smaller images */
+    }
+    
+    /* Make video iframes responsive */
+    .retro-video {
+        width: 100%;
+        height: 100%;
+    }
 }

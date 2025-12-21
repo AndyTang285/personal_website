@@ -14,7 +14,7 @@
 <body>
 
     <header id="navbar">
-        <div><h1 class="logo">ANDY.TXT</h1></div>
+        <div class = "logo-container"><img class="logo" src="shiki_pixel.png"></div>
         <nav>
             <button data-target="about">About Me</button>
             <button data-target="projects">Projects</button>
@@ -35,7 +35,7 @@
                 <span class="dot yellow"></span>
                 <span class="dot green"></span>
             </div>
-            <div class="title">RETRO-PORTFOLIO - ANDY TANG</div>
+            <div class="title">PORTFOLIO-WEBSITE</div>
         </div>
 
         <div class="retro-banner">
@@ -44,12 +44,13 @@
 
         <div class="profile-row">
             <div class="pfp-box">
-                <img class="pfp-icon" src="Mirajane_Alegria_SS.webp" alt="mira!!!!">
+                <img class="pfp-icon" src="P1030290.jpg" alt="mira!!!!">
             </div>
 
             <div class="profile-info">
                 <h1>Andy Tang</h1>
                 <p class="tags"> CS & CogSci @ UMich</p>
+                <p class="links"><a href="https://drive.google.com/file/d/1G8YiEll50uiThaDtGYzw1t5ck4V6ZM-B/view?usp=sharing" target = "_blank">RESUME</a> • <a href="https://www.linkedin.com/in/andy-tang-281b3227b/" target ="_blank">LINKEDIN</a> • <a href="https://github.com/AndyTang285" target="_blank">GITHUB</a> • <a href="https://gitlab.eecs.umich.edu/andytg" target="_blank">GITLAB</a></p>
                 <p class="status"></p>
             </div>
         </div>
@@ -60,9 +61,8 @@
                 Hi I'm Andy, a CS and Cognitive Science student at the University of Michigan Ann Arbor. 
             </p>
             <p class="description">
-                Give me an internship pleaseeee. I want a Riot gun buddy. Stop nerfing Viper. 
-                I can't take this anymore. China Japan please go to war AFTER the new Black Clover comes out.
-                One Piece is soooooooo assssssss. DB better. #100thieveswin #pistonswin WHY IS GTA 6 DELAYED EVEN MORE?! GODDAMN!
+                I'm interested in building interactive software that blends engineering, design, and human-centered thinking.
+                I enjoy working on projects at the intersection of software, graphics, and interaction — especially systems that feel intuitive, expressive, or immersive.
             </p>
         </section>
 
@@ -74,7 +74,7 @@
                 <div class="folder-card" onclick="openModal('modal-tiny-tours')">
                     <div class="folder-tab">#001</div>
                     <div class="folder-body">
-                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                        <img src="tiny_tours0.jpg" class="folder-img" alt="tiny tours Screenshot">
                     </div>
                     <div class="folder-paper">---------------</div>
                     <div class="folder-footer">
@@ -88,7 +88,7 @@
                 <div class="folder-card" onclick="openModal('modal-backline')">
                     <div class="folder-tab">#002</div>
                     <div class="folder-body">
-                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                        <img src="backline0.png" class="folder-img" alt="Backline Screenshot">
                     </div>
                     <div class="folder-paper">---------------</div>
                     <div class="folder-footer">
@@ -102,7 +102,7 @@
                 <div class="folder-card" onclick="openModal('modal-hand-tracking')">
                     <div class="folder-tab">#003</div>
                     <div class="folder-body">
-                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                        <img src="drive0.png" class="folder-img" alt="hand-track driving Screenshot">
                     </div>
                     <div class="folder-paper">---------------</div>
                     <div class="folder-footer">
@@ -116,13 +116,13 @@
                 <div class="folder-card" onclick="openModal('modal-trappist')">
                     <div class="folder-tab">#004</div>
                     <div class="folder-body">
-                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                        <img src="Trappist0.png" class="folder-img" alt="Trappist Screenshot">
                     </div>
                     <div class="folder-paper">---------------</div>
                     <div class="folder-footer">
                         <h3>TRAPPIST-1 VR</h3>
                         <p class="project-text">
-                            A VR exploration of the TRAPPIST-1 system allowing users to observe real-time orbits.
+                            A VR exploration of the TRAPPIST-1 system allowing users to observe planetary orbits.
                         </p>
                     </div>
                 </div>
@@ -130,7 +130,7 @@
                 <div class="folder-card" onclick="openModal('modal-vector-pit')">
                     <div class="folder-tab">#005</div>
                     <div class="folder-body">
-                        <div class="project-image-placeholder"><p>SCREENSHOT.PNG</p></div>
+                        <img src="fps0.png" class="folder-img" alt="Vector Pit FPS Screenshot">
                     </div>
                     <div class="folder-paper">---------------</div>
                     <div class="folder-footer">
@@ -141,23 +141,43 @@
                     </div>
                 </div>
 
+                <div class="folder-card" onclick="openModal('modal-blender')">
+                    <div class="folder-tab">#006</div>
+                    <div class="folder-body">
+                        <img src="minecraft_block.jpeg" class="folder-img" alt="Blender Thumb">
+                    </div>
+                    <div class="folder-paper">---------------</div>
+                    <div class="folder-footer">
+                        <h3>3D Modeling</h3>
+                        <p class="project-text">
+                            3D models and environments created using Blender. 
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="card contacts">
             <p class="title contacts">> CONTACT ME</p>
-            <form id="contactForm">
+            
+            <form id="contactForm" action="https://formsubmit.co/andytang285@gmail.com" method="POST">
+                
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                
                 <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+                
                 <button type="submit" id="submit">Send</button>
+                
                 <p id="formStatus"></p>
             </form>
         </section>
 
     </main>
 
-    <footer>Footer</footer>
+
 
 
     <div id="modal-tiny-tours" class="modal-overlay">
@@ -169,17 +189,46 @@
             <div class="modal-content">
                 <div class="modal-left-col">
                     <div class="modal-img-box">
-                        <p>IMAGE HERE</p>
-                        </div>
+                        <img src= "tiny_tours1.png">
+                    </div>
+                    <div class="modal-img-box">
+                        <img src = "tiny_tours2.png">
+                    </div>
+                    <div class="modal-img-box">
+                        <img src = "tiny_tours3.png">
+                    </div>
+                    <div class="modal-img-box">
+                        <img src = "tiny_tours4.png">
+                    </div>
                     <p class="status-tag">STATUS: <span style="color:#63cdb0">IN PROGRESS</span></p>
+    
                 </div>
                 <div class="modal-text">
-                    <h2>Tiny Tours VR</h2>
+                    <h2>Tiny Tours (UM RHELab)</h2>
+                  
+                    <p><strong>&gt; OVERVIEW</strong></p>
                     <p>
-                        Tiny Tours is a Unity-based VR simulation that visualizes nuclear and particle-level processes, helping users explore interactions relevant to radiation and nuclear systems.
-                        <br><br>
-                        Users can shrink down to the atomic level to observe electron interactions, alpha decay, and gamma radiation in real-time.
+                      Tiny Tours is an ongoing VR research prototype focused on visualizing nuclear and radiation-related phenomena across multiple physical scales. The project explores how immersive VR environments can help users intuitively understand particle interactions, energy transfer, and radiation behavior that are traditionally represented through abstract equations and 2D diagrams.
                     </p>
+                  
+                    <p><strong>&gt; FEATURES</strong></p>
+                    <ul>
+                      <li>Multi-scale navigation between molecular, atomic, and subatomic environments relevant to radiation and nuclear processes</li>
+                      <li>Interactive visualization of particle behavior and interaction events</li>
+                      <li>Scale-aware VR interactions designed to preserve physical intuition across orders of magnitude</li>
+                      <li>Overlays displaying particle type, relative energy, and interaction context</li>
+                      <li>Free navigation using VR locomotion and hand-based interaction controls</li>
+                    </ul>
+                  
+                    <p><strong>&gt; TECHNICAL NOTES</strong></p>
+                    <ul>
+                      <li>Built in Unity using C# and XR Interaction Toolkit.</li>
+                      <li>Supports smooth movement between very different physical scales (molecular → subatomic)</li>
+                      <li>Visualizes particle behavior and basic radiation-matter interactions in real time</li>
+                      <li>Uses adjustable simulation speed to slow down or accelerate interactions</li>
+                      <li>VR movement and hand interactions implemented with Unity XR Interaction Toolkit</li>
+                    </ul>
+                  </div>
                 </div>
             </div>
         </div>
@@ -193,17 +242,56 @@
             </div>
             <div class="modal-content">
                 <div class="modal-left-col">
-                    <div class="modal-img-box"><p>IMAGE HERE</p></div>
+                    <div class="modal-img-box">
+                        <iframe 
+                            class="retro-video" 
+                            src="https://www.youtube.com/embed/F3IXIvC_IQA?si=iqhCyQEHVG5eOsrH" 
+                            title="Project Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>    
+                        </iframe>
+                    </div>
                     <p class="status-tag">STATUS: <span style="color:#77ccff">FINISHED</span></p>
                 </div>
                 <div class="modal-text">
                     <h2>Backline</h2>
+
+                    <p><strong>&gt; OVERVIEW</strong></p>
                     <p>
-                        Backline is a third-person horror game built in Unity featuring custom level design, scripted interactions, dynamic audio cues, and atmosphere-focused lighting.
-                        <br><br>
-                        It focuses on psychological tension rather than cheap jump scares.
+                        Backline is a third-person horror game I built in Unity, focused on atmosphere, exploration, and scripted interactions.
+                        The game is structured around moving through custom environments, interacting with objects, and triggering events that push the player forward.
+                        Most of the tension comes from how lighting, sound, and visibility are used to control what the player can see and anticipate.
                     </p>
-                </div>
+
+                    <p><strong>&gt; LORE</strong></p>
+                    <p>
+                    Andy is trying to find his friend Stark, who has gone missing.
+                    The game switches between two perspectives, with each one revealing different pieces of what happened.
+                    </p>
+
+
+                    <p><strong>&gt; FEATURES</strong></p>
+                    <ul>
+                        <li>Third-person exploration with a focus on atmosphere and tension</li>
+                        <li>Custom level design with intentional layouts to guide movement and visibility</li>
+                        <li>Scripted interactions and trigger-based events (doors, props, audio, environment changes)</li>
+                        <li>Audio cues that react to player movement, interactions, and progression</li>
+                        <li>Lighting used to control mood and what the player can (or can’t) see</li>
+                        <li>Scene transitions and checkpoints used to move the story forward</li>
+                        <li>Two playable perspectives that switch between scenes as more of the story is revealed</li>
+                    </ul>
+
+                    <p><strong>&gt; TECHNICAL NOTES</strong></p>
+                    <ul>
+                        <li>Built in Unity using C#, with reusable scripts for interactions, triggers, and events</li>
+                        <li>Uses collider triggers and simple state checks to control progression and one-time scares</li>
+                        <li>Layered audio setup with ambient loops, proximity sounds, and interaction SFX</li>
+                        <li>Lighting tweaked per scene to balance mood and visibility</li>
+                        <li>Set up so new scenes and events can be added easily using the same trigger and interaction system</li>
+                    </ul>
+                    </div>
+
             </div>
         </div>
     </div>
@@ -216,14 +304,45 @@
             </div>
             <div class="modal-content">
                 <div class="modal-left-col">
-                    <div class="modal-img-box"><p>IMAGE HERE</p></div>
+                    <div class="modal-img-box">
+                        <iframe 
+                            class="retro-video" 
+                            src="https://www.youtube.com/embed/LWnzDbvqrBk?si=2uQ262RLz-tvednO" 
+                            title="Project Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>    
+                        </iframe>
+                    </div>
                     <p class="status-tag">STATUS: <span style="color:#77ccff">FINISHED</span></p>
                 </div>
                 <div class="modal-text">
                     <h2>Hand-Tracking Driving</h2>
+
+                    <p><strong>&gt; OVERVIEW</strong></p>
                     <p>
-                        Developed a touchless vehicle control system using C# and Unity. Integrated Google MediaPipe for real-time computer vision, allowing users to steer, accelerate, and brake using only hand gestures.
+                        This project started as an experiment to replace traditional keyboard controls with real-time hand tracking.
+                        Using only a webcam, the system tracks my hands and maps their movement to vehicle steering and braking.
+                        There are no controllers or sensors involved — just computer vision, vector math, and a lot of tuning to make it feel responsive and usable.
                     </p>
+
+                    <p><strong>&gt; FEATURES</strong></p>
+                    <ul>
+                        <li>Hands-only driving using real-time computer vision (no physical controllers)</li>
+                        <li>Steering controlled by tilting both hands like an invisible steering wheel</li>
+                        <li>Braking and reverse triggered through clenched hand gestures</li>
+                        <li>On-screen visualization of the hand skeleton used by the tracking model</li>
+                        <li>Adjusted vehicle physics so the car feels stable and controllable with gesture input</li>
+                    </ul>
+
+                    <p><strong>&gt; TECHNICAL NOTES</strong></p>
+                    <ul>
+                        <li>Built in Unity using C# with Google MediaPipe for hand tracking</li>
+                        <li>Tracks 21 hand landmarks per hand to estimate pose and gestures</li>
+                        <li>Custom vector math used to convert wrist orientation into steering angles</li>
+                        <li>Input smoothing applied to reduce jitter and improve control stability</li>
+                        <li>Modified the Prometeo Car Controller to accept AI-based inputs instead of keyboard controls</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -237,7 +356,16 @@
             </div>
             <div class="modal-content">
                 <div class="modal-left-col">
-                    <div class="modal-img-box"><p>IMAGE HERE</p></div>
+                    <div class="modal-img-box">
+                        <iframe 
+                            class="retro-video" 
+                            src="https://www.youtube.com/embed/v1ZBIpHRT8A?si=utmtN1DGEw3_5kPK" 
+                            title="Project Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>    
+                        </iframe>
+                    </div>
                     <p class="status-tag">STATUS: <span style="color:#77ccff">FINISHED</span></p>
                 </div>
                 <div class="modal-text">
@@ -263,7 +391,7 @@
                       <li>Implemented custom orbital motion using trigonometric functions (<code>Mathf.Sin</code>, <code>Mathf.Cos</code>) for smooth real-time planet movement.</li>
                       <li>Uses a global time multiplier to support fast-forward and slow-motion simulation.</li>
                       <li>VR interactions and locomotion managed via Unity XR Interaction Toolkit and XR Interaction Manager.</li>
-                      <li>Planetary data sourced and cross-referenced from NASA’s Eyes on Exoplanets TRAPPIST-1 simulation.</li>
+                      <li>Planetary data sourced and cross-referenced from NASA's Eyes on Exoplanets TRAPPIST-1 simulation.</li>
                     </ul>
                   </div>
                   
@@ -279,17 +407,100 @@
             </div>
             <div class="modal-content">
                 <div class="modal-left-col">
-                    <div class="modal-img-box"><p>IMAGE HERE</p></div>
+                    <div class="modal-img-box">
+
+                        <iframe 
+                            class="retro-video" 
+                            src="https://www.youtube.com/embed/htW5bU6cL7I?si=oGiLoQxHwMcHvczc" 
+                            title="Project Demo" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>    
+                        </iframe>
+            
+                    </div>
                     <p class="status-tag">STATUS: <span style="color:#77ccff">FINISHED</span></p>
                 </div>
                 <div class="modal-text">
                     <h2>Vector Pit VR</h2>
+
+                    <p><strong>&gt; OVERVIEW</strong></p>
                     <p>
-                        Vector Pit is an intense, retro-arcade VR shooter where you survive endless waves of geometric enemies in a neon-lit cyber arena. It features smooth locomotion and a wrist-mounted radar system.
+                        Vector Pit VR is an endless arcade-style VR shooter set in a neon, geometric arena.
+                        The focus is on fast movement, spatial awareness, and surviving increasingly difficult waves.
                     </p>
+
+                    <p><strong>&gt; FEATURES</strong></p>
+                    <ul>
+                        <li>Endless wave-based gameplay with increasing difficulty</li>
+                        <li>Wrist-mounted radar for tracking nearby enemies</li>
+                        <li>Smooth locomotion and strafing</li>
+                        <li>Neon, vector-inspired visual style</li>
+                    </ul>
+
+                    <p><strong>&gt; TECHNICAL NOTES</strong></p>
+                    <ul>
+                        <li>Built in Unity using C# and XR Interaction Toolkit</li>
+                        <li>Object pooling for enemies and projectiles</li>
+                        <li>Dynamic difficulty scaling</li>
+                        <li>Optimized for stable VR frame rates</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-blender" class="modal-overlay">
+        <div class="modal-window">
+            <div class="modal-bar">
+                <span>BLENDER_ASSETS.ZIP</span>
+                <button class="close-btn" onclick="closeModal('modal-blender')">X</button>
+            </div>
+            <div class="modal-content">
+                <div class="modal-left-col">
+                    
+                    <div class="modal-img-box">
+                        <img src="3D_VREP_AT_CITY.png" alt="Render 1">
+                    </div>
+
+                    <div class="modal-img-box">
+                        <iframe
+                            class="retro-video"
+                            src="https://www.youtube.com/embed/mx2A99b6mBs"
+                            title="Project Demo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+
+                    <div class="modal-img-box">
+                        <img src="optimus_prime.jpg" alt="Wireframe">
+                    </div>
+
+                    <p class="status-tag">STATUS: <span style="color:#77ccff">ONGOING</span></p>
+                </div>
+
+                <div class="modal-text">
+                    <h2>3D Modeling Portfolio</h2>
+                    
+                    <p><strong>&gt; OVERVIEW</strong></p>
+                    <p>
+                        A collection of 3D assets I designed in Blender.
+                        Sketchfab: <a href="https://sketchfab.com/andytg" target = "_blank">https://sketchfab.com/andytg</a>
+                    </p>
+
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="image-lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
     </div>
 
     <script src="script.js"></script>
